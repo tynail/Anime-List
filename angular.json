@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "anime-list"
+    }
+  },
+  "defaultProject": "anime-list",
+  "cli": {
+    "analytics": false
+  }
 }

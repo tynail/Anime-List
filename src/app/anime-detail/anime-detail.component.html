@@ -1,0 +1,11 @@
+<div *ngIf="anime">
+  <h1>{{ anime.name | uppercase }}</h1>
+  <h2>Number of episode: {{ anime.numberOfEpisode }}</h2>
+</div>
+
+<div class="">
+  <label>
+    name:
+    <input [(ngModel)]="anime.name" placeholder="name" />
+  </label>
+</div>
