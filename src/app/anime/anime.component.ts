@@ -11,10 +11,7 @@ import { MessageService } from '../message.service';
 export class AnimeComponent implements OnInit {
   selectedAnime: Anime;
   animes: Anime[];
-  constructor(
-    private animeService: AnimeService,
-    private messageService: MessageService
-  ) {}
+  constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
     this.getAnime();
@@ -22,10 +19,5 @@ export class AnimeComponent implements OnInit {
 
   getAnime(): void {
     this.animeService.getAnimes().subscribe((animes) => (this.animes = animes));
-  }
-
-  onSelect(anime: Anime): void {
-    this.selectedAnime = anime;
-    this.messageService.add(`AnimeComponent: Selected Anime id=${anime.id}`);
   }
 }

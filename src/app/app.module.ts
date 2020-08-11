@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { AnimeComponent } from './anime/anime.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, AnimeComponent, AnimeDetailComponent, MessagesComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, AnimeComponent, AnimeDetailComponent, MessagesComponent, DashboardComponent],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
