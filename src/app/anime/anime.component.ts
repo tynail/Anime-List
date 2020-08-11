@@ -13,7 +13,7 @@ export class AnimeComponent implements OnInit {
   constructor(private animeService: AnimeService) {}
 
   getAnime(): void {
-    this.animes = this.animeService.getAnimes();
+    this.animeService.getAnimes().subscribe((animes) => (this.animes = animes));
   }
 
   onSelect(anime: Anime): void {
