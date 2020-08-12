@@ -8,8 +8,14 @@ import { MessageService } from './message.service';
 })
 export class AnimeService {
   constructor(private messageService: MessageService) {}
+
   getAnimes(): Observable<Anime[]> {
     this.messageService.add('AnimeService: fetched animes');
     return of(ANIMES);
+  }
+
+  getAnime(id: number): Observable<Anime> {
+    this.messageService.add(`Anime Service fetched anime id=${id}`);
+    return of(ANIMES.find((anime) => anime.id === id));
   }
 }
