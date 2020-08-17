@@ -11,8 +11,9 @@ import { Location } from '@angular/common';
 })
 export class AnimeDetailComponent implements OnInit {
   @Input() anime: Anime;
+
   constructor(
-    private AnimeService: AnimeService,
+    private animeService: AnimeService,
     private location: Location,
     private route: ActivatedRoute
   ) {}
@@ -23,7 +24,11 @@ export class AnimeDetailComponent implements OnInit {
 
   getAnime(): void {
     const id = +this.route.snapshot.paramMap.get('id'); // Javascript + operator convert string to number
-    this.AnimeService.getAnime(id).subscribe((anime) => (this.anime = anime));
+    this.animeService.getAnime(id).subscribe((anime) => (this.anime = anime));
+  }
+
+  save(): void {
+    this.animeService.updateAnime(this.anime).subscribe(() => this.goBack());
   }
 
   goBack(): void {
