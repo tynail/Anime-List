@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Anime } from './anime';
-import { ANIMES } from './mock-animes';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -42,12 +41,14 @@ export class AnimeService {
   }
 
   public getAnimes(): Observable<Anime[]> {
-    this.messageService.add('AnimeService: fetched animes');
     return (
       this.http
         .get<Anime[]>(this.animesUrl)
         // catchError intercepts an Observable that failed
-        .pipe(catchError(this.handleError<Anime[]>('getAnimes', [])))
+        .pipe(
+          tap((_) => this.log(`fetched animes`)),
+          catchError(this.handleError<Anime[]>('getAnimes', []))
+        )
     );
   }
 
@@ -59,10 +60,26 @@ export class AnimeService {
     );
   }
 
-  public updateAnime(anime: Anime): Observable<any> {
+  public addAnime(anime: Anime): Observable<Anime> {
+    return this.http.post<Anime>(this.animesUrl, anime, this.httpOptions).pipe(
+      tap((newAnime: Anime) => this.log(`Added anime id=${newAnime.id}`)),
+      catchError(this.handleError<Anime>('AddAnime'))
+    );
+  }
+
+  public updateAnime(anime: Anime): Observable<Anime> {
     return this.http.put<Anime>(this.animesUrl, anime, this.httpOptions).pipe(
       tap((_) => this.log(`updated anime id=${anime.id}`)),
-      catchError(this.handleError<any>('updateAnime'))
+      catchError(this.handleError<Anime>('updateAnime'))
+    );
+  }
+
+  public deleteAnime(anime: Anime | number): Observable<Anime> {
+    const id = typeof anime === 'number' ? anime : anime.id;
+    const url = `${this.animesUrl}/${id}`;
+    return this.http.delete<Anime>(url, this.httpOptions).pipe(
+      tap((_) => this.log(`Deleted anime id = ${id}`)),
+      catchError(this.handleError<Anime>('deleteAnime'))
     );
   }
 }
