@@ -82,4 +82,19 @@ export class AnimeService {
       catchError(this.handleError<Anime>('deleteAnime'))
     );
   }
+
+  public searchAnime(term: string): Observable<Anime[]> {
+    if (!term.trim()) {
+      // if not search term return empty anime array
+      return of([]);
+    }
+    return this.http.get<Anime[]>(`${this.animesUrl}/?name=${term}`).pipe(
+      tap((x) =>
+        x.length
+          ? this.log(`found animes matching "${term}" `)
+          : this.log(`found no animes matching "${term}" `)
+      ),
+      catchError(this.handleError<Anime[]>('searchAnime', []))
+    );
+  }
 }
