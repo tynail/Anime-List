@@ -21,11 +21,22 @@ export class SerieComponent implements OnInit {
     this.serieService.getSeries().subscribe((series) => (this.series = series));
   }
 
+  // TODO: Need to pass more parameter for this method
   public add(name: string): void {
     name = name.trim();
     if (!name) return;
+
+    const newSerie: Serie = {
+      id: 30, // Make this a automatic generated id
+      title: name,
+      description: '',
+      numberOfEpisode: 0, //tbd
+      numberOfSeason: 0, // tbd
+      numberOfWatchedEpisode: 0, // tbd
+    };
+
     this.serieService
-      .addSerie({ name } as Serie)
+      .addSerie(newSerie)
       .subscribe((serie) => this.series.push(serie));
   }
 
