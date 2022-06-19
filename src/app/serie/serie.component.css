@@ -1,11 +1,11 @@
-.animes {
+.series {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 20em;
 }
 
-.animes li {
+.series li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -16,23 +16,23 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.animes li:hover {
+.series li:hover {
   color: #607d8b;
   background-color: #ddd;
   left: 0.1em;
 }
 
-.animes li.selected {
+.series li.selected {
   background-color: #cfd8dc;
   color: white;
 }
 
-.animes li.selected:hover {
+.series li.selected:hover {
   background-color: #bbd8dc;
   color: white;
 }
 
-.animes .badge {
+.series .badge {
   display: inline-block;
   font-size: small;
   color: white;
