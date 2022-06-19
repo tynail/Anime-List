@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AnimeComponent } from './anime/anime.component';
+import { SerieComponent } from './serie/serie.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'animes', component: AnimeComponent },
+  { path: 'series', component: SerieComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: AnimeDetailComponent },
+  { path: 'detail/:id', component: SerieDetailComponent },
 ];
 
 @NgModule({

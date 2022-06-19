@@ -40,7 +40,10 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/babel-webpack
 
 # System Files
 .DS_Store
 Thumbs.db
+.pack
+.angular

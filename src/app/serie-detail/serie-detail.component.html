@@ -1,0 +1,16 @@
+<div *ngIf="serie">
+  <h1>{{ serie.name | uppercase }} Details</h1>
+  <h2>Number of episode: {{ serie.numberOfEpisode }}</h2>
+  <h2>Number of watched episode: {{ serie.numberOfWatchedEpisode }}</h2>
+</div>
+
+<div class="">
+  <label>
+    name:
+    <input [(ngModel)]="serie.name" placeholder="name" />
+  </label>
+</div>
+
+<button (click)="save()">Save</button>
+
+<button (click)="goBack()">Go back</button>

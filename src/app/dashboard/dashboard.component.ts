@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Anime } from '../anime';
-import { AnimeService } from '../anime.service';
+import { Serie } from '../serie';
+import { SerieService } from '../serie.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  animes: Anime[] = [];
-  constructor(private animeService: AnimeService) {}
+  series: Serie[] = [];
+  constructor(private serieService: SerieService) {}
 
   ngOnInit(): void {
-    this.getAnimes();
+    this.getSeries();
   }
 
-  getAnimes(): void {
-    this.animeService
-      .getAnimes()
-      .subscribe((animes) => (this.animes = animes.slice(1, 5)));
+  getSeries(): void {
+    this.serieService
+      .getSeries()
+      .subscribe((series) => (this.series = series.slice(1, 5)));
   }
 }

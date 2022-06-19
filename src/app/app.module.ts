@@ -4,23 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AnimeComponent } from './anime/anime.component';
-import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { SerieComponent } from './serie/serie.component';
+import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import { AnimeSearchComponent } from './anime-search/anime-search.component';
+import { SerieSearchComponent } from './serie-search/serie-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimeComponent,
-    AnimeDetailComponent,
+    SerieComponent,
+    SerieDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    AnimeSearchComponent,
+    SerieSearchComponent,
   ],
   imports: [
     BrowserModule,

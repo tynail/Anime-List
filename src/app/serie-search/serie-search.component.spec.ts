@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimeSearchComponent } from './anime-search.component';
+import { SerieSearchComponent } from './serie-search.component';
 
 describe('AnimeSearchComponent', () => {
-  let component: AnimeSearchComponent;
-  let fixture: ComponentFixture<AnimeSearchComponent>;
+  let component: SerieSearchComponent;
+  let fixture: ComponentFixture<SerieSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimeSearchComponent ]
-    })
-    .compileComponents();
+      declarations: [SerieSearchComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnimeSearchComponent);
+    fixture = TestBed.createComponent(SerieSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

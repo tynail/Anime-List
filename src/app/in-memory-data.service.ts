@@ -1,4 +1,4 @@
-import { Anime } from './anime';
+import { Serie } from './serie';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
@@ -59,7 +59,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     return { animes };
   }
-  genId(animes: Anime[]): number {
+  genId(animes: Serie[]): number {
     return animes.length > 0
       ? Math.max(...animes.map((anime) => anime.id)) + 1
       : 11;

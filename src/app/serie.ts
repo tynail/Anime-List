@@ -1,4 +1,4 @@
-export interface Anime {
+export interface Serie {
   id: number;
   name: string;
   numberOfEpisode: number;
