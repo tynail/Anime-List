@@ -13,7 +13,7 @@ export class SerieService {
     private http: HttpClient
   ) {}
 
-  private baseAPIUrl = 'api/';
+  private baseAPIUrl = 'api';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };

@@ -7,7 +7,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const animes = [
+    const series = [
       {
         id: 1,
         name: 'Hajime no Ippo',
@@ -57,11 +57,11 @@ export class InMemoryDataService implements InMemoryDbService {
         numberOfWatchedEpisode: 0,
       },
     ];
-    return { animes };
+    return { series };
   }
-  genId(animes: Serie[]): number {
-    return animes.length > 0
-      ? Math.max(...animes.map((anime) => anime.id)) + 1
+  genId(series: Serie[]): number {
+    return series.length > 0
+      ? Math.max(...series.map((serie) => serie.id)) + 1
       : 11;
   }
   constructor() {}
