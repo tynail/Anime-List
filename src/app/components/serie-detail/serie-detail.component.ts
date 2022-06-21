@@ -1,6 +1,6 @@
-import { SerieService } from '../serie.service';
+import { SerieService } from '../../services/serie.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Serie } from '../serie';
+import { Serie } from '../../models/serie';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 

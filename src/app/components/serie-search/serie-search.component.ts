@@ -1,5 +1,5 @@
-import { SerieService } from '../serie.service';
-import { Serie } from '../serie';
+import { SerieService } from '../../services/serie.service';
+import { Serie } from '../../models/serie';
 import { Observable, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';

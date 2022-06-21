@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Serie } from '../serie';
-import { SerieService } from '../serie.service';
-import { MessageService } from '../message.service';
+import { Serie } from '../../models/serie';
+import { SerieService } from '../../services/serie.service';
 
 @Component({
   selector: 'app-serie',

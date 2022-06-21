@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SerieComponent } from './serie/serie.component';
-import { SerieDetailComponent } from './serie-detail/serie-detail.component';
-import { MessagesComponent } from './messages/messages.component';
+import { SerieComponent } from './components/serie/serie.component';
+import { SerieDetailComponent } from './components/serie-detail/serie-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-import { SerieSearchComponent } from './serie-search/serie-search.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { SerieSearchComponent } from './components/serie-search/serie-search.component';
 
 @NgModule({
   declarations: [
