@@ -1,4 +1,4 @@
-import { Serie } from './serie';
+import { Serie } from '../models/serie';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 

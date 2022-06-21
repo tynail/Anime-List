@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Serie } from './serie';
-import { Observable, of } from 'rxjs';
-import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, tap, map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { Serie } from '../models/serie';
+import { MessageService } from './message.service';
 @Injectable({
   providedIn: 'root',
 })
