@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 import { Serie } from '../models/serie';
 import { MessageService } from './message.service';
 @Injectable({
@@ -13,7 +14,7 @@ export class SerieService {
     private http: HttpClient
   ) {}
 
-  private baseAPIUrl = 'api';
+  private baseAPIUrl = environment.api.url;
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
