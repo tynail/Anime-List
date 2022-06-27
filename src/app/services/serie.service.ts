@@ -53,7 +53,7 @@ export class SerieService {
     );
   }
 
-  public getSerie(id: number): Observable<Serie> {
+  public getSerie(id: string): Observable<Serie> {
     const url = `${this.baseAPIUrl}/serie/${id}`;
 
     return this.http.get<Serie>(url).pipe(

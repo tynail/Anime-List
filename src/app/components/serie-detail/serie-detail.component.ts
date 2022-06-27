@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./serie-detail.component.css'],
 })
 export class SerieDetailComponent implements OnInit {
-  @Input() serie: Serie;
+  public serie: Serie;
 
   constructor(
     private serieService: SerieService,
@@ -23,7 +23,7 @@ export class SerieDetailComponent implements OnInit {
   }
 
   getSerie(): void {
-    const id = +this.route.snapshot.paramMap.get('id'); // Javascript + operator convert string to number
+    const id = this.route.snapshot.paramMap.get('id');
     this.serieService.getSerie(id).subscribe((serie) => (this.serie = serie));
   }
 

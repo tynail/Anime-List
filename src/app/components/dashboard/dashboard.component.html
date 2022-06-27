@@ -4,10 +4,10 @@
   <a
     *ngFor="let serie of series"
     class="col-1-4"
-    routerLink="/detail/{{ serie.id }}"
+    routerLink="/detail/{{ serie._id }}"
   >
     <div class="module serie">
-      <h4>{{ serie.name }}</h4>
+      <h4>{{ serie.title }}</h4>
     </div>
   </a>
 </div>

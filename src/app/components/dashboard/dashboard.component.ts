@@ -17,6 +17,6 @@ export class DashboardComponent implements OnInit {
   getSeries(): void {
     this.serieService
       .getSeries()
-      .subscribe((series) => (this.series = series.slice(1, 5)));
+      .subscribe((series) => (this.series = series.slice(0, 5)));
   }
 }

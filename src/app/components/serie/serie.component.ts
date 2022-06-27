@@ -26,7 +26,7 @@ export class SerieComponent implements OnInit {
     if (!name) return;
 
     const newSerie: Serie = {
-      id: 30, // Make this a automatic generated id
+      id: 'wesasdw', // Make this a automatic generated id
       title: name,
       description: '',
       numberOfEpisode: 0, //tbd
